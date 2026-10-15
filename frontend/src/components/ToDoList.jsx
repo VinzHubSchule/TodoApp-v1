@@ -1,13 +1,15 @@
 import TodoItem from "./TodoItem.jsx";
 
-function ToDoList() {
+function ToDoList({ todos }) {
     return (
-<TodoSection title="Meine Aufgaben">
-    <ToDoList todos={todos} />
-</TodoSection>
-<TodoSection title="Hinweis">
-    <p>Plane zuerst die nächste Aufgabe.</p>
-</TodoSection>
+        <section>
+            <h2>Deine Aufgaben</h2>
+            <ul>
+                {todos.map((todo) => (
+                    <li key={todo.id}><TodoItem todo={todo} /></li>
+                ))}
+            </ul>
+        </section>
     );
 }
 
