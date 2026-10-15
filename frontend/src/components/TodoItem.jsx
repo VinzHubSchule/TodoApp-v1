@@ -1,10 +1,10 @@
-function TodoItem() {
+function TodoItem({ todo }) {
     return (
         <article>
-            <h2>React-Grundlagen üben</h2>
-            <p>Props und State wiederholen</p>
-            <p>Fällig am 15.10.2026</p>
-            <span>Offen</span>
+            <h3>{todo.title}</h3>
+            <p>{todo.description}</p>
+            <p>Fällig am {todo.dueDate}</p>
+            <span>{todo.done ? "Erledigt" : "Offen"}</span>
         </article>
     );
 }
