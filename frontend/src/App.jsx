@@ -1,5 +1,12 @@
+import ToDoList from "./components/ToDoList.jsx";
+
 function App() {
-    return <h1>TodoApp v1</h1>;
+    return (
+        <main>
+            <header><h1>TodoApp</h1></header>
+            <ToDoList />
+        </main>
+    );
 }
 
 export default App;
