@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "React-Grundlagen üben",
+    "dueDate": "2026-10-15",
+    "description": "Props und State wiederholen",
+    "done": false
+  },
+  {
+    "id": 2,
+    "title": "Wireframe überprüfen",
+    "dueDate": "2026-10-20",
+    "description": "Zustände ergänzen",
+    "done": false
+  },
+  {
+    "id": 3,
+    "title": "Projektstand prüfen",
+    "dueDate": "2026-10-25",
+    "done": true
+  }
+]
