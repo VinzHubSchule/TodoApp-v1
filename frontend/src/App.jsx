@@ -40,6 +40,7 @@ function App() {
             />
             <ToDoList todos={visibleTodos} />
             <TodoForm />
+
         </main>);
 }
 
@@ -47,6 +48,11 @@ function toggleTodo(todoId) {
     setTodos((currentTodos) => currentTodos.map((todo) =>
         todo.id === todoId ? { ...todo, done: !todo.done } : todo,
     ));
+}
+
+function deleteTodo(todo) {
+    if (!window.confirm(`„${todo.title}“ wirklich löschen?`)) return;
+    setTodos((current) => current.filter((item) => item.id !== todo.id));
 }
 
 <ToDoList todos={visibleTodos} onToggle={toggleTodo} />

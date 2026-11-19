@@ -9,7 +9,7 @@
 //     );
 // }
 
-function TodoItem({ todo, onToggle }) {
+function TodoItem({ todo, onToggle, onDelete }) {
     return (
         <article>
             <button
@@ -23,8 +23,12 @@ function TodoItem({ todo, onToggle }) {
             {todo.description && <p>{todo.description}</p>}
             <p>Fällig am {todo.dueDate}</p>
             <span>{todo.done ? "Erledigt" : "Offen"}</span>
+
+            <button type="button" onClick={() => onDelete(todo)} aria-label={`${todo.title} löschen`}>
+                Löschen
+            </button>
         </article>
     );
-}
+} 
 
 export default TodoItem;
