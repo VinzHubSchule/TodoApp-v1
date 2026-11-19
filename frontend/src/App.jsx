@@ -3,6 +3,7 @@ import ToDoList from "./components/ToDoList.jsx";
 import initialTodos from "./data/mockTodos.json";
 import TodoFilters from "./components/TodoFilters.jsx";
 import TodoSection from "./components/TodoSection.jsx";
+import TodoForm from "./components/TodoForm.jsx";
 
 function App() {
     // return (
