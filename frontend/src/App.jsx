@@ -39,6 +39,7 @@ function App() {
                 onStatusChange={setStatus} onSearchChange={setSearch} onSortChange={setSort}
             />
             <ToDoList todos={visibleTodos} />
+            <TodoForm />
         </main>);
 }
 
