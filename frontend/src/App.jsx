@@ -6,18 +6,6 @@ import TodoSection from "./components/TodoSection.jsx";
 import TodoForm from "./components/TodoForm.jsx";
 
 function App() {
-    // return (
-    //     <main>
-    //         <header><h1>TodoApp</h1></header>
-    //         <TodoSection title="Meine Aufgaben">
-    //             <ToDoList todos={initialTodos} />
-    //         </TodoSection>
-
-    //         <TodoSection title="Hinweis">
-    //             <p>Plane zuerst die nächste Aufgabe.</p>
-    //         </TodoSection>
-    //     </main>
-    // );
     const [todos, setTodos] = useState(initialTodos);
     const [status, setStatus] = useState("all");
     const [search, setSearch] = useState("");
@@ -31,19 +19,6 @@ function App() {
             return direction * first.dueDate.localeCompare(second.dueDate);
         });
 
-    return (
-        <main>
-            <h1>TodoApp</h1>
-            <TodoFilters
-                status={status} search={search} sort={sort}
-                onStatusChange={setStatus} onSearchChange={setSearch} onSortChange={setSort}
-            />
-            <ToDoList todos={visibleTodos} />
-            <TodoForm />
-
-        </main>);
-}
-
 function toggleTodo(todoId) {
     setTodos((currentTodos) => currentTodos.map((todo) =>
         todo.id === todoId ? { ...todo, done: !todo.done } : todo,
@@ -54,7 +29,24 @@ function deleteTodo(todo) {
     if (!window.confirm(`„${todo.title}“ wirklich löschen?`)) return;
     setTodos((current) => current.filter((item) => item.id !== todo.id));
 }
+    
 
-<ToDoList todos={visibleTodos} onToggle={toggleTodo} />
+    return (
+        <main>
+            <h1>TodoApp</h1>
+            <TodoFilters
+                status={status} search={search} sort={sort}
+                onStatusChange={setStatus} onSearchChange={setSearch} onSortChange={setSort}
+            />
+            <ToDoList todos={visibleTodos} onToggle={toggleTodo}/>
+            <TodoForm />
+
+
+        </main>);
+}
+
+
+
+
 
 export default App;
